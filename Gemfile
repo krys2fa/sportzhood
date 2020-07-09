@@ -5,6 +5,7 @@ ruby '2.7.0'
 gem 'pg'
 gem 'rubocop', '~>0.81.0'
 gem 'devise'
+gem 'hirb', '~> 0.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
