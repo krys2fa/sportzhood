@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user, only: [:create]
 
   # GET /articles
   # GET /articles.json

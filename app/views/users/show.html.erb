@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-9 m-5 text-center border border-primary rounded py-5">
+
+      <div class="mb-5">
+        <strong class="h3 text-danger font-weight-bold">Name</strong>
+        <div class="h3 font-weight-bold"><%= @current_user.Name %></div>
+      </div>
+
+      <h2 class="text-primary mb-5">Previous Events</h2>
+      <%# unless @previous_events.nil? %>
+      <%# @previous_events.each do |previous_event| %>
+      <hr />
+      <p><%#= previous_event.try(:title) %></p>
+      <p>Date: <%#= previous_event.try(:date) %></p>
+      <hr />
+      <%# end %>
+      <%# end %>
+
+      <h2 class="text-primary mb-5">Upcoming Events</h2>
+      <%# unless @upcoming_events.nil? %>
+      <%# @upcoming_events.each do |upcoming_event| %>
+      <hr />
+      <p><%#= upcoming_event.try(:title) %></p>
+      <p>Date: <%#= upcoming_event.try(:date) %></p>
+      <hr />
+      <%# end %>
+      <%# end %>
+
+      <h2 class="text-primary mb-5">Attended Events</h2>
+      <%# unless @attended_events.nil? %>
+      <%# @attended_events.each do |attended_event| %>
+      <hr />
+      <p><%#= attended_event.try(:title) %></p>
+      <p>Date: <%#= attended_event.try(:date) %></p>
+      <hr />
+      <%# end %>
+      <%# end %>
+
+      <h2 class="text-primary mb-5">Events Invited To</h2>
+      <%# unless @invited_events.nil? %>
+      <%# @invited_events.each do |invited_event| %>
+      <hr />
+      <p><%#= invited_event.try(:title) %></p>
+      <p>Date: <%#= invited_event.try(:date) %></p>
+      <hr />
+      <%# end %>
+      <%# end %>
+
+      <%= link_to 'Back', users_path %>
+
+    </div>
+  </div>
+</div>
