@@ -4,6 +4,7 @@
 
   <div class="row">
     <div class="featured">
+      <h2>Featured Article</h2>
       <p>Author: <%= featured_owner(@featured) %></p>
       <p>Title: <%= featured_title(@featured) %></p>
       <p>Content: <%= featured_content(@featured) %></p>
@@ -11,6 +12,7 @@
   </div>
 
   <div class="row">
+    <h2>Categories</h2>
     <% @categories.each do |category| %>
       <div class="mb-5 mt-5">
         <p>Category Name: <%= link_to category.Name, category_path(category) %></p>

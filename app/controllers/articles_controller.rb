@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
     @articles    = Article.all
     article_hash = {}
     @articles.each {|article| article_hash[article.id] = article.votes.size }
-    max_value = article_hash.max_by { |key, value| value }
+    max_value = article_hash.max_by { |key, value| value }[0]
     @featured    = Article.where(id: max_value).includes(:user)
 
     @categories = Category.order(:Priority).limit(4).includes(:articles)
