@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def index
-  end
+  def index;end
 
   def create
     @user = User.find_by(Name: params[:name])
@@ -21,14 +20,14 @@ class SessionsController < ApplicationController
     redirect_to sessions_path
   end
 
-  def user_logged_in?
-    !session[:id].nil?
-  end
+  # def user_logged_in?
+  #   !session[:id].nil?
+  # end
 
-  def logged_in_user
-    return if logged_in?
+  # def logged_in_user
+  #   return if logged_in?
 
-    flash[:danger] = 'Please log in.'
-    redirect_to sessions_path
-  end
+  #   flash[:danger] = 'Please log in.'
+  #   redirect_to sessions_path
+  # end
 end
