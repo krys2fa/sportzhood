@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :set_current_user, only: [:create, :index]
+  before_action :set_current_user
 
   # GET /articles
   # GET /articles.json
@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
     @articles.each {|article| article_hash[article.id] = article.votes.size }
     max_value = article_hash.max_by { |key, value| value }
     @featured    = Article.where(id: max_value).includes(:user)
+
+    @categories = Category.order(:Priority).limit(4).includes(:articles)
   end
 
   # GET /articles/1

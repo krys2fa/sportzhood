@@ -11,6 +11,16 @@
   </div>
 
   <div class="row">
+    <% @categories.each do |category| %>
+      <div class="mb-5 mt-5">
+        <p>Category Name: <%= link_to category.Name, category_path(category) %></p>
+        <p>Article Title: <%= category.articles.pluck(:Title).last %></p>
+        <p>Article Image: <%= category.articles.pluck(:Image).last %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
     <table>
       <thead>
         <tr>

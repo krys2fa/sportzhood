@@ -10,10 +10,13 @@
 
 <div class="container">
   <div class="row">
-    <% @category.articles.each do |article| %>
+    <% @category.articles.reverse.each do |article| %>
       <div>
         <p>Title: <%= article.Title %></p>
-        <p><%= article.Text %></p>
+        <p>Text: <%= article.Text %></p>
+        <p>Image: <%= article.Image %></p>
+        <p>Author: <%= article.user.Name %></p>
+        <%= vote_button(article) if @current_user %>
       </div>
     <% end %>
   </div>
