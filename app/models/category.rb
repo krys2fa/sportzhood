@@ -4,4 +4,5 @@ class Category < ApplicationRecord
 
   validates_presence_of :Name, :Priority
   validates_length_of :Name, { minimum: 4 }
+  validates_uniqueness_of :Priority
 end

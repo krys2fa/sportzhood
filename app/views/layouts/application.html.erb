@@ -21,6 +21,14 @@
         <ul class="nav navbar-nav">
           <li><%= link_to 'Home', articles_path %></li>
         </ul>
+
+        <ul class="nav navbar-nav">
+          <% @categories.each do |category| %>
+          <li><%= link_to category.Name, category_path(category) %></li>
+          <% end %>
+        </ul>
+
+
         <ul class="nav navbar-nav pull-right">
           <% if session[:id].nil? %>
             <li><%= link_to 'Log In', sessions_path %></li>
