@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_current_user, only: [:show, :edit]
+  before_action :set_current_user, only: %i[show edit]
   before_action :authenticate_user, except: %i[new create]
 
   def index
     # @users = User.all
   end
 
-  def show;end
+  def show; end
 
   def new
     @user = User.new

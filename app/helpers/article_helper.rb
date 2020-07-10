@@ -1,5 +1,4 @@
 module ArticleHelper
-
   def featured_owner(article)
     article.first.user.Name
   end
@@ -11,5 +10,4 @@ module ArticleHelper
   def featured_content(article)
     article.first.Text
   end
-
 end

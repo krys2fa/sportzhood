@@ -5,12 +5,12 @@ class Article < ApplicationRecord
   has_many :votes, foreign_key: 'ArticleId', class_name: 'Vote', dependent: :destroy
 
   validates_presence_of :Title, :Text, :AuthorId
-  validates_length_of :Title, :Text, { minimum: 5}
+  validates_length_of :Title, :Text, { minimum: 5 }
 
-  def self.get_featured_article
-    @articles    = Article.all
+  def self.featured_article
+    @articles = Article.all
     article_hash = {}
-    @articles.each {|article| article_hash[article.id] = article.votes.size }
+    @articles.each { |article| article_hash[article.id] = article.votes.size }
     max_value = article_hash.key(article_hash.values.max)
     Article.where(id: max_value).includes(:user)
   end

@@ -10,7 +10,6 @@ class VotesController < ApplicationController
     else
       redirect_to category_path(category), alert: 'You unvoted an article'
     end
-
   end
 
   def destroy
@@ -24,5 +23,4 @@ class VotesController < ApplicationController
       redirect_to category_path(category), alert: 'Cannot unvote without voting first!'
     end
   end
-
 end

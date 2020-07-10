@@ -17,5 +17,4 @@ class ApplicationController < ActionController::Base
   def set_nav_categories
     @nav_categories = Category.limit(6)
   end
-
 end
