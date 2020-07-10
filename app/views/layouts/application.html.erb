@@ -23,7 +23,7 @@
         </ul>
 
         <ul class="nav navbar-nav">
-          <% @categories.each do |category| %>
+          <% @nav_categories.each do |category| %>
           <li><%= link_to category.Name.upcase, category_path(category) %></li>
           <% end %>
         </ul>

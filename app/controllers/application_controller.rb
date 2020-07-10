@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :set_current_user
-  before_action :set_categories
+  before_action :set_nav_categories
 
   def set_current_user
     if session[:id]
@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
     redirect_to sessions_path if session[:id].nil?
   end
 
-  def set_categories
-    @categories = Category.all.limit(5)
+  def set_nav_categories
+    @nav_categories = Category.limit(6)
   end
 
 end
