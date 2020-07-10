@@ -5,7 +5,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles    = Article.all
+    article_hash = {}
+    @articles.each {|article| article_hash[article.id] = article.votes.size }
+    max_value = article_hash.max_by { |key, value| value }
+    @featured    = Article.where(id: max_value).includes(:user)
   end
 
   # GET /articles/1
