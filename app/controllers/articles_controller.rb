@@ -2,34 +2,20 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :set_current_user
 
-  # GET /articles
-  # GET /articles.json
   def index
-    @articles    = Article.all
-    article_hash = {}
-    @articles.each {|article| article_hash[article.id] = article.votes.size }
-    max_value = article_hash.max_by { |key, value| value }[0]
-    @featured    = Article.where(id: max_value).includes(:user)
-
+    @articles = Article.all
+    @featured = Article.get_featured_article
     @categories = Category.order(:Priority).limit(4).includes(:articles)
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
-  def show
-  end
+  def show;end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
-  def edit
-  end
+  def edit;end
 
-  # POST /articles
-  # POST /articles.json
   def create
     @article = Article.new(article_params)
 
@@ -44,8 +30,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -58,8 +42,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
@@ -69,12 +51,10 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def article_params
       params.require(:article).permit(:Title, :Text, :Image, :AuthorId)
     end
