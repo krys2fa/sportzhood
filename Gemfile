@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'figaro'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'

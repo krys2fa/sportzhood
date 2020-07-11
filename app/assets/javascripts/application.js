@@ -18,3 +18,10 @@
 //= require bootstrap/dropdown
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+  setTimeout(function(){
+    $('.alert').slideUp(500);
+  }, 3000);
+});

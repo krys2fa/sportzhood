@@ -23,12 +23,11 @@
 
 <div class="field">
   <%= form.label :Image %>
-  <%= form.text_field :Image %>
+  <%= form.file_field :Image %>
 </div>
 
 <div class="field">
-  <%= form.label :AuthorId %>
-  <%= form.number_field :AuthorId %>
+  <%= f.hidden_field :Image_cache%>
 </div>
 
 <div class="actions">

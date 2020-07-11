@@ -6,6 +6,9 @@ class Article < ApplicationRecord
 
   validates_presence_of :Title, :Text, :AuthorId
   validates_length_of :Title, :Text, { minimum: 5 }
+  validate :image_size_validation
+
+  mount_uploader :Image, ImageUploader
 
   def self.featured_article
     @articles = Article.all
@@ -13,5 +16,11 @@ class Article < ApplicationRecord
     @articles.each { |article| article_hash[article.id] = article.votes.size }
     max_value = article_hash.key(article_hash.values.max)
     Article.where(id: max_value).includes(:user)
+  end
+
+
+  private
+  def image_size_validation
+    errors[:Image] << "should be less than 500KB" if Image.size > 0.5.megabytes
   end
 end

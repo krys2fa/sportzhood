@@ -17,7 +17,12 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def create
-    @article = Article.new(article_params)
+    @article = @current_user.articles.build(article_params)
+    # @value = Cloudinary::Uploader.upload(params[:Image])
+    # @article = Article.new({:Image => @value['secure_url'],
+    #                         :Title => params[:Title],
+    #                         :Text => params[:Text],
+    #                         :AuthorId => @current_user.id})
 
     respond_to do |format|
       if @article.save
@@ -57,6 +62,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:Title, :Text, :Image, :AuthorId)
+    params.require(:article).permit(:Title, :Text, :Image)
   end
 end
