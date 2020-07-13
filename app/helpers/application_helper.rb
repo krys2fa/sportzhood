@@ -10,6 +10,15 @@ module ApplicationHelper
       category_links.html_safe
     end
   end
+
+  def display_flash(flash)
+    message = ''
+    flash.each do |key, value|
+      message << content_tag(:div, value, class: "alert alert-#{key}")
+    end
+    message.html_safe
+  end
+
 end
 
 

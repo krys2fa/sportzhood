@@ -12,7 +12,7 @@
 
 <body>
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-light">
     <div class="container">
       <div class="navbar-header">
         <%= link_to 'sportzhood', articles_path, class: 'navbar-brand' %>
@@ -50,17 +50,34 @@
     </div>
   </nav>
 
-  <div class="container">
-    <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <%= value %>
-    </div>
-    <% end %>
+  <d class="container">
+    <%= display_flash(flash) %>
   </div>
 
-  <div class="container">
+  <main class='container'>
     <%= yield %>
-  </div>
+  </main>
+
+  <footer class='container'>
+    <div class='flex-h space-between'>
+      <div class="logo">
+        spoRtzHood
+      </div>
+
+        <ul class='footer-info flex-h'>
+          <li class="rules">Privacy Policy</li>
+          <li class='rules'>Terms & Conditions</li>
+          <li class='text-white'>Copyright 2020. All rights reserved</li>
+        </ul>
+
+      <ul class='footer-info flex-h space-between'>
+        <li><span class='text-white'>Connect with us</span></li>
+        <li><%= link_to "<i class='fa fa-twitter social-icons'></i>".html_safe, '#' %></li>
+        <li><%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %></li>
+        <li><%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %></li>
+      </ul>
+    </div>
+  </footer>
 
 
 

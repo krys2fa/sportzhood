@@ -13,9 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
+@import 'font-awesome';
 
 .alert-alert {
   @extend .alert-warning;
@@ -23,4 +25,61 @@
 
 .alert-notice {
   @extend .alert-success;
+}
+
+body {
+  min-width: 1024px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  background-color: #4E453F;
+}
+
+.flex-h,
+.flex-v {
+  display: flex;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.logo {
+  text-shadow: 0px 2px 5px rgb(170, 37, 37);
+  color: #fff;
+  font-size: 3rem;
+}
+
+.footer-info {
+  padding: 0;
+  li {
+    margin: 10px;
+    a {
+      color: #000;
+    }
+  }
+}
+
+.social-icons {
+  border-radius: 100%;
+  border: 1px solid #FE6001;
+  font-size: 1rem;
+  background-color: #FE6001;
+  padding: 3px;
+}
+
+.rules {
+  color: #FE6001;
+}
+
+.text-white {
+  color: #fff;
 }
