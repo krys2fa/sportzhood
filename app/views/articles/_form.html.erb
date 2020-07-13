@@ -13,17 +13,17 @@
 
 <div class="field">
   <%= form.label :Title %>
-  <%= form.text_field :Title %>
+  <%= form.text_field :Title, class: 'form-control', autofocus: true %>
 </div>
 
 <div class="field">
   <%= form.label :Text %>
-  <%= form.text_area :Text %>
+  <%= form.text_area :Text, class: 'h5 font-weight-bold form-control' %>
 </div>
 
 <div class="field">
   <%= form.label :Image %>
-  <%= form.file_field :Image %>
+  <%= form.file_field :Image, class: 'custom-btn' %>
 </div>
 
 <div class="field">
@@ -35,12 +35,12 @@
   <%= form.collection_select :category_id, Category.order(:Name), :id, :Name %>
 </div>
 
-<p>
+<div class="field">
   <%= form.label :tag_list %><br />
-  <%= form.text_field :tag_list %>
-</p>
+  <%= form.text_field :tag_list, class: 'form-control' %>
+</div>
 
 <div class="actions">
-  <%= form.submit %>
+  <%= form.submit class: 'custom-btn' %>
 </div>
 <% end %>
