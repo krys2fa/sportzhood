@@ -40,6 +40,10 @@ ul {
   list-style-type: none;
 }
 
+main {
+  margin: 0;
+}
+
 footer {
   background-color: #4E453F;
   position: fixed;
@@ -87,6 +91,18 @@ footer {
 .featured {
   height: 300px;
   background-color: blue;
+}
+
+.formbox {
+  width: 350px;
+  margin: auto;
+  border: 1px solid #FE6001;
+  padding: 10px 40px 40px;
+  border-radius: 5px;
+}
+
+.commentbox {
+  margin-bottom: 60px;
 }
 
 .error_explanation {

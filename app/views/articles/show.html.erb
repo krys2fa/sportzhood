@@ -1,32 +1,47 @@
-<h1><%= @article.Title %></h1>
-<p>
-  Tags:
-  <% @article.tags.each do |tag| %>
-  <%#= link_to tag.name, tag_path(tag) %>
-  <%= tag.name %>
-  <% end %>
-</p>
+<div class="container">
+  <h1 class="theme-color text-center"><%= @article.Title %></h1>
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <p>
+        Tags:
+        <% @article.tags.each do |tag| %>
+        <%#= link_to tag.name, tag_path(tag) %>
+        <span class="btn-primary">
+          <%= tag.name %>
+        </span>
+        <% end %>
+      </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.Title %>
-</p>
+      <p class="text-center">
+        <%= image_tag(@article.Image.thumbnail.url, :width => 200, :height => 200)%>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.Text %>
-</p>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@article.Image.thumbnail.url, :width => 50, :height => 50)%>
+      <p class="">
+        <%= @article.Text %>
+      </p>
 
-</p>
+      <div>
 
-<%= render partial: 'comments/form' %>
-<h3>Comments (<%= @article.comments.size %>)</h3>
-<%= render partial: 'articles/comment', collection: @article.comments %>
+        <%= render partial: 'articles/comment', collection: @article.comments %>
 
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="text-center commentbox">
+        <h3 class="theme-color"> <%= @article.comments.size %></h3> <span>comments posted for this article</span>
+        <p><%= render partial: 'comments/form' %></p>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

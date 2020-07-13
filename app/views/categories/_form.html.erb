@@ -13,15 +13,15 @@
 
 <div class="field">
   <%= form.label :Name %>
-  <%= form.text_field :Name %>
+  <%= form.text_field :Name, class: 'form-control' %>
 </div>
 
 <div class="field">
   <%= form.label :Priority %>
-  <%= form.number_field :Priority %>
+  <%= form.number_field :Priority, class: 'form-control' %>
 </div>
 
 <div class="actions">
-  <%= form.submit %>
+  <%= form.submit class: 'custom-btn' %>
 </div>
 <% end %>
