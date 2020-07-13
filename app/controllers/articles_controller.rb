@@ -17,15 +17,11 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def create
-    @article = @current_user.articles.build(article_params)
-    # @value = Cloudinary::Uploader.upload(params[:Image])
-    # @article = Article.new({:Image => @value['secure_url'],
-    #                         :Title => params[:Title],
-    #                         :Text => params[:Text],
-    #                         :AuthorId => @current_user.id})
+    @article = @current_user.articles.build(Title: article_params[:Title], Text: article_params[:Text], Image: article_params[:Image])
 
     respond_to do |format|
       if @article.save
+        ArticleCategory.create(CategoryId: article_params[:category_id], ArticleId: @article.id)
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
@@ -62,6 +58,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:Title, :Text, :Image)
+    params.require(:article).permit(:Title, :Text, :Image, :category_id, :Image_cache)
   end
 end

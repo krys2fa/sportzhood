@@ -6,7 +6,7 @@ class Article < ApplicationRecord
 
   validates_presence_of :Title, :Text, :AuthorId
   validates_length_of :Title, :Text, { minimum: 5 }
-  validate :image_size_validation
+  # validate :image_size_validation
 
   mount_uploader :Image, ImageUploader
 
@@ -20,7 +20,8 @@ class Article < ApplicationRecord
 
 
   private
-  def image_size_validation
-    errors[:Image] << "should be less than 500KB" if Image.size > 0.5.megabytes
-  end
+  # def image_size_validation
+    # errors[:Image] << "should be less than 500KB" if Image.size > 0.5.megabytes
+    # errors.add(:Image, 'should be less than 500KB') if Image.size > 0.5.megabytes
+  # end
 end

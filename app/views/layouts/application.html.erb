@@ -23,7 +23,9 @@
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><%= link_to 'WRITE AN ARTICLE', new_article_path %></li>
+          <!-- nav_menu(categories) -->
+          <%= nav_menu(@nav_categories) %>
+          <!-- <li><%#= link_to 'WRITE AN ARTICLE', new_article_path %></li> -->
         </ul>
 
         <!-- <ul class="nav navbar-nav">

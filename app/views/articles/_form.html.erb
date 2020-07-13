@@ -27,7 +27,12 @@
 </div>
 
 <div class="field">
-  <%= f.hidden_field :Image_cache%>
+  <%= form.hidden_field :Image_cache%>
+</div>
+
+<div class="field">
+  <%= form.label :category_id, 'Category' %>
+  <%= form.collection_select :category_id, Category.order(:Name), :id, :Name %>
 </div>
 
 <div class="actions">

@@ -17,7 +17,7 @@
       <div class="mb-5 mt-5">
         <p>Category Name: <%= link_to category.Name, category_path(category) %></p>
         <p>Article Title: <%= category.articles.pluck(:Title).last %></p>
-        <p>Article Image: <%= category.articles.pluck(:Image).last %></p>
+        <p>Article Image: <%#= image_tag(category.articles.pluck(:Image).last.thumbnail.url) %></p>
       </div>
     <% end %>
   </div>
