@@ -1,3 +1,12 @@
+<h1><%= @article.Title %></h1>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+  <%#= link_to tag.name, tag_path(tag) %>
+  <%= tag.name %>
+  <% end %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @article.Title %>

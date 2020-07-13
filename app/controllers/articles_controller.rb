@@ -22,7 +22,10 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def create
-    @article = @current_user.articles.build(Title: article_params[:Title], Text: article_params[:Text], Image: article_params[:Image])
+    @article = @current_user.articles.build(Title: article_params[:Title],
+                                            Text: article_params[:Text],
+                                            Image: article_params[:Image],
+                                            tag_list: article_params[:tag_list])
 
     respond_to do |format|
       if @article.save
@@ -38,7 +41,7 @@ class ArticlesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @article.update(article_params)
+      if @article.update(Title: article_params[:Title], Text: article_params[:Text], Image: article_params[:Image])
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
@@ -63,6 +66,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:Title, :Text, :Image, :category_id, :Image_cache)
+    params.require(:article).permit(:Title, :Text, :Image, :category_id, :Image_cache, :tag_list)
   end
 end

@@ -35,6 +35,11 @@
   <%= form.collection_select :category_id, Category.order(:Name), :id, :Name %>
 </div>
 
+<p>
+  <%= form.label :tag_list %><br />
+  <%= form.text_field :tag_list %>
+</p>
+
 <div class="actions">
   <%= form.submit %>
 </div>
