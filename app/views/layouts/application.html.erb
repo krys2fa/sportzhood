@@ -36,7 +36,7 @@
 
 
         <ul class="nav navbar-nav pull-right">
-          <% if session[:id].nil? %>
+          <% if @current_user.nil? %>
             <li><%= link_to 'LOGIN', sessions_path %></li> |
             <li><%= link_to 'REGISTER', new_user_path %></li>
           <% else %>
