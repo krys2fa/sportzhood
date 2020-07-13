@@ -12,7 +12,7 @@
   <div class="row">
     <% @category.articles.reverse.each do |article| %>
       <div>
-        <p>Title: <%= article.Title %></p>
+        <p>Title: <%= link_to article.Title, article_comments_path(article) %></p>
         <p>Text: <%= article.Text %></p>
         <p>Image: <%= article.Image %></p>
         <p>Author: <%= article.user.Name %></p>

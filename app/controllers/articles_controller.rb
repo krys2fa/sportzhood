@@ -8,7 +8,12 @@ class ArticlesController < ApplicationController
     @categories = Category.order(:Priority).limit(4).includes(:articles)
   end
 
-  def show; end
+  def show
+    # @article = Article.find(params[:id])
+
+    @comment = Comment.new
+    @comment.article_id = @article.id
+  end
 
   def new
     @article = Article.new
