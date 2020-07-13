@@ -12,57 +12,57 @@
 
 <body>
 
-  <nav class="navbar navbar-light">
-    <div class="container">
-      <div class="navbar-header">
-        <%= link_to 'sportzhood', articles_path, class: 'navbar-brand' %>
-      </div>
-      <div id="navbar">
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'HOME', articles_path %></li>
-        </ul>
+    <nav class="navbar navbar-default ">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'spoRtzHood', articles_path, class: 'navbar-brand logo' %>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'HOME', articles_path, class: 'theme-color' %></li>
+          </ul>
 
-        <ul class="nav navbar-nav">
-          <%= nav_menu(@nav_categories) %>
-        </ul>
+          <ul class="nav navbar-nav">
+            <%= nav_menu(@nav_categories) %>
+          </ul>
 
-        <ul class="nav navbar-nav pull-right">
-          <% if @current_user.nil? %>
-            <li><%= link_to 'LOGIN', sessions_path %></li>
-            <li><%= link_to 'REGISTER', new_user_path %></li>
-          <% else %>
+          <ul class="nav navbar-nav pull-right">
+            <% if @current_user.nil? %>
+            <li><%= link_to 'LOGIN', sessions_path, class: 'nav-theme' %></li>
+            <li><%= link_to 'REGISTER', new_user_path, class: 'nav-theme' %></li>
+            <% else %>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <a class="dropdown-toggle black-color" data-toggle="dropdown" href="#">
                 <%= @current_user.Name.upcase %>
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><%= link_to 'Profile', edit_user_path(@current_user) %></li>
+                <!-- <li><%#= link_to 'Profile', edit_user_path(@current_user) %></li> -->
                 <li>
                   <%= link_to 'Log out', session_path(session), data: {:confirm => 'Are you sure?'},
                      :method => :delete, class: "nav-item nav-link text-white" %>
                 </li>
               </ul>
             </li>
-          <% end %>
-        </ul>
+            <% end %>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <div class="container">
+      <%= display_flash(flash) %>
     </div>
-  </nav>
 
-  <d class="container">
-    <%= display_flash(flash) %>
-  </div>
+    <main class='container'>
+      <%= yield %>
+    </main>
 
-  <main class='container'>
-    <%= yield %>
-  </main>
-
-  <footer class='container'>
-    <div class='flex-h space-between'>
-      <div class="logo">
-        spoRtzHood
-      </div>
+    <footer class='flex-h space-between'>
+      <!-- <div class='flex-h space-between'> -->
+        <div class="logo">
+          spoRtzHood
+        </div>
 
         <ul class='footer-info flex-h'>
           <li class="rules">Privacy Policy</li>
@@ -70,14 +70,15 @@
           <li class='text-white'>Copyright 2020. All rights reserved</li>
         </ul>
 
-      <ul class='footer-info flex-h space-between'>
-        <li><span class='text-white'>Connect with us</span></li>
-        <li><%= link_to "<i class='fa fa-twitter social-icons'></i>".html_safe, '#' %></li>
-        <li><%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %></li>
-        <li><%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %></li>
-      </ul>
-    </div>
-  </footer>
+        <ul class='footer-info flex-h space-between'>
+          <li><span class='text-white'>Connect with us</span></li>
+          <li><%= link_to "<i class='fa fa-twitter social-icons'></i>".html_safe, '#' %></li>
+          <li><%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %></li>
+          <li><%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %></li>
+        </ul>
+      <!-- </div> -->
+    </footer>
+ <!-- </div> -->
 
 
 

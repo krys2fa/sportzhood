@@ -19,16 +19,21 @@
 @import 'bootstrap/theme';
 @import 'font-awesome';
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
 .alert-alert {
-  @extend .alert-warning;
+  @extend .alert-danger;
+  font-weight: 600;
 }
 
 .alert-notice {
   @extend .alert-success;
+  font-weight: 600;
 }
 
 body {
   min-width: 1024px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -37,6 +42,10 @@ ul {
 
 footer {
   background-color: #4E453F;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .flex-h,
@@ -56,6 +65,40 @@ footer {
   text-shadow: 0px 2px 5px rgb(170, 37, 37);
   color: #fff;
   font-size: 3rem;
+  margin-left: 50px;
+}
+
+.nav-theme {
+  color: #000;
+  font-weight: 600;
+}
+
+.theme-color {
+  font-weight: 400;
+  color: #FE6001;
+}
+
+.nav_link {
+  a {
+    color: #000;
+  }
+}
+
+.formbox {
+  margin: 0 auto;
+  background-color: blue;
+}
+
+.error_explanation {
+
+}
+
+.custom-btn {
+  background-color: #4E453F;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 .footer-info {

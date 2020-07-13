@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    flash[:notice] = 'Kindly log in first'
+    flash[:alert] = 'Kindly log in first...'
     redirect_to sessions_path if session[:id].nil?
   end
 

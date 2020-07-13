@@ -1,10 +1,10 @@
 <%= form_with url: sessions_path do |form| %>
   <div class="field">
     <%= form.label :name, class: "h3 font-weight-bold d-block" %>
-    <%= form.text_field :name, class: "h5 font-weight-bold d-block border-rounded w-75 mx-auto mt-3 mb-5"%>
+    <%= form.text_field :name, class: "h5 font-weight-bold", autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Log In', class: "btn-primary py-3 px-5 border-0 rounded-pill" %>
+    <%= form.submit 'Log In', class: "custom-btn" %>
   </div>
 <% end %>
