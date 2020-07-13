@@ -1,39 +1,22 @@
 module ApplicationHelper
-
   def nav_menu(categories)
     if @current_user
-      link_to('WRITE AN ARTICLE', new_article_path)
+      content_tag(:li, link_to('WRITE AN ARTICLE', new_article_path))
     else
-      # content_tag :ul do
-      #   categories.collect do |category|
-      #     concat(content_tag(:li, category.Name.upcase, category_path(category)))
-      #   end
-      # end
-
+      category_links = ''
       categories.each do |category|
-        concat(content_tag(:li, link_to(category.Name.upcase, category_path(category))))
+        category_links << content_tag(:li, link_to(category.Name.upcase, category_path(category)))
       end
+      category_links.html_safe
     end
   end
-
 end
 
-# content_tag :li do
-#     concat link_to(seo_url(taxon)) do
-#        content_tag(:span, '(50)', class: 'pull-right') + taxon.name
-#     end
-#     concat taxons_tree(taxon, current_taxon, max_level - 1)
+
+# html_values = ""
+#   resources.each do |resource|
+#     text = resource.name
+#     clz = 'label label-primary'
+#     html_values << (content_tag :span, text,clz)
 #   end
-
-
-# <ul class="nav navbar-nav">
-#           <%# @nav_categories.each do |category| %>
-#           <li><%#= link_to category.Name.upcase, category_path(category) %></li>
-#           <%# end %>
-#         </ul>
-
-#         content_tag :ul do
-#           collection_to_pass.collect do |c|
-#                concat(content_tag(:li, c.your_param, class : "your_class_name"))
-#      end
-#    end
+#  html_values.html_safe

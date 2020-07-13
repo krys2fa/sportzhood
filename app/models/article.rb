@@ -9,7 +9,6 @@ class Article < ApplicationRecord
 
   validates_presence_of :Title, :Text, :AuthorId
   validates_length_of :Title, :Text, { minimum: 5 }
-  # validate :image_size_validation
 
   mount_uploader :Image, ImageUploader
 
@@ -21,20 +20,9 @@ class Article < ApplicationRecord
     Article.where(id: max_value).includes(:user)
   end
 
-  # def tag_list
-  #   tags.collect {|tag| tag.name}.join(", ")
-  # end
-
   def tag_list=(tags_string)
-    tag_names = tags_string.split(",").collect{|s| s.strip.downcase}.uniq
+    tag_names = tags_string.split(',').collect { |s| s.strip.downcase }.uniq
     new_or_found_tags = tag_names.collect { |name| Tag.find_or_create_by(name: name) }
     self.tags = new_or_found_tags
   end
-
-
-  private
-  # def image_size_validation
-    # errors[:Image] << "should be less than 500KB" if Image.size > 0.5.megabytes
-    # errors.add(:Image, 'should be less than 500KB') if Image.size > 0.5.megabytes
-  # end
 end

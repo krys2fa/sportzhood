@@ -3,11 +3,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
-  process :convert => 'png'
-  process :tags => ['article_picture']
+  process convert: 'png'
+  process tags: ['article_picture']
 
   version :standard do
-    process :resize_to_fill => [100, 150, :north]
+    process resize_to_fill: [100, 150, :north]
   end
 
   version :thumbnail do
@@ -47,7 +47,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
   # Override the filename of the uploaded files:

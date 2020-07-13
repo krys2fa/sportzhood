@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
       flash[:alert] = 'Sorry, something went wrong...'
       redirect_to article_path(@article)
     end
-
   end
 
   private

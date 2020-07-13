@@ -23,21 +23,12 @@
         </ul>
 
         <ul class="nav navbar-nav">
-          <!-- nav_menu(categories) -->
           <%= nav_menu(@nav_categories) %>
-          <!-- <li><%#= link_to 'WRITE AN ARTICLE', new_article_path %></li> -->
         </ul>
-
-        <!-- <ul class="nav navbar-nav">
-          <%# @nav_categories.each do |category| %>
-          <li><%#= link_to category.Name.upcase, category_path(category) %></li>
-          <%# end %>
-        </ul> -->
-
 
         <ul class="nav navbar-nav pull-right">
           <% if @current_user.nil? %>
-            <li><%= link_to 'LOGIN', sessions_path %></li> |
+            <li><%= link_to 'LOGIN', sessions_path %></li>
             <li><%= link_to 'REGISTER', new_user_path %></li>
           <% else %>
             <li class="dropdown">
