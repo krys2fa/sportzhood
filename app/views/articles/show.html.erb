@@ -6,14 +6,14 @@
         Tags:
         <% @article.tags.each do |tag| %>
         <%#= link_to tag.name, tag_path(tag) %>
-        <span class="btn-primary">
-          <%= tag.name %>
-        </span>
+          <span class="tag">
+            <%= tag.name %>
+          </span>
         <% end %>
       </p>
 
       <p class="text-center">
-        <%= image_tag(@article.Image.thumbnail.url, :width => 300, :height => 300)%>
+        <%= image_tag(@article.Image.thumbnail.url, :width => 425, :height => 300)%>
 
       </p>
 

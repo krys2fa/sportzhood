@@ -8,7 +8,7 @@
         <p class="theme-color">
           <%= @category.Name %>
         </p>
-        <p><%= link_to article.Title, article_path(article), class: 'nav-theme' %></p>
+        <p><%= link_to article.Title.truncate(30), article_path(article), class: 'nav-theme underline' %></p>
         <p><%= article.Text.truncate(100, separator: ' ', omission: '.... (continued)') %></p>
 
         <p>Author: <%= article.user.Name %></p>

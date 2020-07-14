@@ -1,9 +1,9 @@
 <div>
   <p class="comment">
-    <h4><%= comment.content %></h4>
+    <h4><i class='fa fa-comment'>&nbsp;</i><%= comment.content %></h4>
   </p>
   <p>
-    <h6><%= comment.author %> commented <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %>
+    <h6><i><%= comment.author %></i> commented <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %>
       later</h6>
   </p><br />
 
