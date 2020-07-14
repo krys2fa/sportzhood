@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_current_user, only: %i[show edit]
   before_action :authenticate_user, except: %i[new create]
 
-  def index;end
+  def index; end
 
   def new
     @user = User.new

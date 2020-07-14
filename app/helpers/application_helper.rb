@@ -18,9 +18,7 @@ module ApplicationHelper
     end
     message.html_safe
   end
-
 end
-
 
 # html_values = ""
 #   resources.each do |resource|
