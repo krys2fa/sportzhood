@@ -34,6 +34,7 @@
 body {
   min-width: 1024px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
 ul {
@@ -50,11 +51,18 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+  margin-top: 60px;
 }
 
 .flex-h,
 .flex-v {
   display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  margin-top: -20px;
 }
 
 .space-around {
@@ -80,6 +88,14 @@ footer {
 .theme-color {
   font-weight: 400;
   color: #FE6001;
+}
+
+// .theme-title {
+//   font-weight: 600;
+// }
+
+.content {
+  margin: 20px;
 }
 
 .nav_link {

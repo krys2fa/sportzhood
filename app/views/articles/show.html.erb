@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="theme-color text-center"><%= @article.Title %></h1>
   <div class="col-md-12">
-    <div class="col-md-6">
+    <div class="col-md-6" style="margin-bottom: 100px;">
       <p>
         Tags:
         <% @article.tags.each do |tag| %>
@@ -13,7 +13,7 @@
       </p>
 
       <p class="text-center">
-        <%= image_tag(@article.Image.thumbnail.url, :width => 200, :height => 200)%>
+        <%= image_tag(@article.Image.thumbnail.url, :width => 300, :height => 300)%>
 
       </p>
 
