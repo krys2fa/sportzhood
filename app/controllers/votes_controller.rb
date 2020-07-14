@@ -3,7 +3,7 @@ class VotesController < ApplicationController
 
   def create
     @vote = @current_user.votes.new(ArticleId: params[:article_id])
-    category = Article.find_by(id: 1).categories.first
+    category = Article.find_by(id: params[:article_id]).categories.first
 
     if @vote.save
       redirect_to category_path(category), notice: 'You voted for an article'

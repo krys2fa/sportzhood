@@ -4,10 +4,10 @@ class Article < ApplicationRecord
   has_many :categories, through: :article_categories, dependent: :destroy
   has_many :votes, foreign_key: 'ArticleId', class_name: 'Vote', dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
-  validates_presence_of :Title, :Text, :AuthorId
+  validates_presence_of :Title, :Text, :AuthorId, :Image
   validates_length_of :Title, :Text, { minimum: 5 }
 
   mount_uploader :Image, ImageUploader

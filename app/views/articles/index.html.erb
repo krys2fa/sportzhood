@@ -1,19 +1,21 @@
 
     <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
       <p>Author: <%= featured_owner(@featured) %></p>
-      <p class="theme-color"> <%= featured_title(@featured) %></p>
-      <p> <%= featured_content(@featured) %></p>
+      <div class="feature-text">
+        <p class="theme-color"> <%= featured_title(@featured) %></p>
+        <p> <%= featured_content(@featured) %></p>
+      </div>
     </div>
 
   <div class="">
-    <h2>Categories</h2>
       <div class="grid-c">
         <% @categories.each do |category| %>
-        <div style="background-image: url(<%= (category.articles.pluck(:Image)) %>);">
-          <p>Category Name: <%= link_to category.Name, category_path(category) %></p>
-          <p>Article Title: <%= category.articles.pluck(:Title).last %></p>
-          <p>Article Image: <%#= image_tag(category.articles.pluck(:Image).last.thumbnail.url) %></p>
-        </div>
+          <% unless category.articles.last.nil? %>
+          <div class='category' style="background-image: url(<%= category.articles.last.Image.thumbnail.url %>);">
+            <p> <%= link_to category.Name, category_path(category) %></p>
+            <p> <%= category.articles.pluck(:Title).last %></p>
+          </div>
+          <% end %>
         <% end %>
       </div>
   </div>
@@ -22,4 +24,3 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
