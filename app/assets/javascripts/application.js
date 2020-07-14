@@ -19,9 +19,11 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(function() {
-  setTimeout(function(){
+var ready = function () {
+  setTimeout(function () {
     $('.alert').slideUp(500);
   }, 3000);
-});
+};
+
+
+$(document).on('turbolinks:load', ready);
