@@ -1,8 +1,9 @@
   <div class="grid-c">
     <% @category.articles.reverse.each do |article| %>
-    <div class='grid-r'>
+    <div>
       <% if article.id.odd?  %>
-        <p class="article-img"><%= image_tag(article.Image.thumbnail.url, :width => 257, :height => 300) %></p>
+        <div class="article-img"
+          style="background-image: url(<%= article.Image.category_show.url %>);"></div>
       <% end %>
       <div class="content">
         <p class="theme-color">
@@ -13,19 +14,16 @@
 
         <p>Author: <%= article.user.Name %></p>
         <span class="theme-color"><%= article.votes.size %> </span>vote(s)
-        <%= vote_button(article) if @current_user %><br />
+        &nbsp; <%= vote_button(article) if @current_user %><br />
         <span class="theme-color"><%= article.comments.size %></span> comment(s)
 
       </div>
 
       <% if article.id.even?  %>
-        <p class="article-img"><%= image_tag(article.Image.thumbnail.url, :width => 257, :height => 300) %></p>
+        <div class="article-img" style="background-image: url(<%= article.Image.category_show.url %>);"></div>
       <% end %>
     </div>
     <% end %>
   </div>
-<!--
-<%#= link_to 'Edit', edit_category_path(@category) %> |
-<%#= link_to 'Back', categories_path %> -->
 
 

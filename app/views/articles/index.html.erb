@@ -1,21 +1,22 @@
-
-    <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
-        <p class="theme-color feature-title"> <%= featured_title(@featured) %></p>
-        <p class="feature-text"> <%= featured_content(@featured) %></p>
-    </div>
-
-  <div class="">
-      <div class="grid-c">
-        <% @categories.each do |category| %>
-          <% unless category.articles.last.nil? %>
-          <div class='category' style="background-image: url(<%= category.articles.last.Image.thumbnail.url %>);">
-            <p> <%= link_to category.Name, category_path(category) %></p>
-            <span> <%= category.articles.pluck(:Title).last.truncate(30) %></span>
-          </div>
-          <% end %>
-        <% end %>
-      </div>
+<div class="mother-feature">
+  <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
+    <p class="theme-color feature-title"> <%= featured_title(@featured) %></p>
+    <p class="feature-text"> <%= featured_content(@featured) %></p>
   </div>
+
+  <div class="featured-categories">
+    <div class="grid-c">
+      <% @categories.each do |category| %>
+      <% unless category.articles.last.nil? %>
+      <div class='category' style="background-image: url(<%= category.articles.last.Image.thumbnail.url %>);">
+        <p> <%= link_to category.Name, category_path(category) %></p>
+        <span> <%= category.articles.pluck(:Title).last.truncate(30) %></span>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
 

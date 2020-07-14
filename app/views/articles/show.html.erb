@@ -2,6 +2,7 @@
   <h1 class="theme-color text-center"><%= @article.Title %></h1>
   <div class="col-md-12">
     <div class="col-md-6" style="margin-bottom: 100px;">
+      <p>Category: <%= @article.categories[0].Name %></p>
       <p>
         Tags:
         <% @article.tags.each do |tag| %>
@@ -13,19 +14,13 @@
       </p>
 
       <p class="text-center">
-        <%= image_tag(@article.Image.thumbnail.url, :width => 425, :height => 300)%>
-
+        <%= image_tag(@article.Image.article_show.url) %>
       </p>
 
-      <p class="">
-        <%= @article.Text %>
-      </p>
+      <p><%= @article.Text %></p>
 
       <div>
-
         <%= render partial: 'articles/comment', collection: @article.comments %>
-
-
         <%= link_to 'Edit', edit_article_path(@article) %> |
         <%= link_to 'Back', articles_path %>
       </div>
@@ -36,12 +31,8 @@
       <div class="text-center commentbox">
         <h3 class="theme-color"> <%= @article.comments.size %></h3> <span>comments posted for this article</span>
         <p><%= render partial: 'comments/form' %></p>
-
       </div>
     </div>
   </div>
-
-
-
 
 </div>
