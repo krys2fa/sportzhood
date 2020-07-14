@@ -1,34 +1,31 @@
+  <div class="grid-c">
+    <% @category.articles.reverse.each do |article| %>
+    <div class='grid-r'>
+      <% if article.id.odd?  %>
+        <p class="article-img"><%= image_tag(article.Image.thumbnail.url, :width => 257, :height => 300) %></p>
+      <% end %>
+      <div class="content">
+        <p class="theme-color">
+          <%= @category.Name %>
+        </p>
+        <p><%= link_to article.Title, article_path(article), class: 'nav-theme' %></p>
+        <p><%= article.Text.truncate(100, separator: ' ', omission: '.... (continued)') %></p>
 
+        <p>Author: <%= article.user.Name %></p>
+        <span class="theme-color"><%= article.votes.size %> </span>vote(s)
+        <%= vote_button(article) if @current_user %><br />
+        <span class="theme-color"><%= article.comments.size %></span> comment(s)
 
-<!-- <p>
-  <strong>Priority:</strong>
-  <%#= @category.Priority %>
-</p> -->
-
-<!-- <div class="">
-  <div class=""> -->
-    <div class="grid">
-      <% @category.articles.reverse.each do |article| %>
-
-      <div>
-        <p><%= image_tag(article.Image.thumbnail.url, :width => 257, :height => 300) %></p>
-        <div class="content">
-          <p class="theme-color">
-            <%= @category.Name %>
-          </p>
-          <p><%= link_to article.Title, article_path(article), class: 'nav-theme' %></p>
-          <p><%= article.Text.truncate(270, separator: ' ', omission: '.... (continued)') %></p>
-
-          <p>Author: <%= article.user.Name %></p>
-          <p><span class="theme-color"><%= article.votes.size %> </span>vote(s)</p>
-          <p><span class="theme-color"><%= article.comments.size %></span> comment(s)</p>
-          <%= vote_button(article) if @current_user %>
-        </div>
       </div>
+
+      <% if article.id.even?  %>
+        <p class="article-img"><%= image_tag(article.Image.thumbnail.url, :width => 257, :height => 300) %></p>
       <% end %>
     </div>
-  <!-- </div>
-</div> -->
+    <% end %>
+  </div>
+<!--
+<%#= link_to 'Edit', edit_category_path(@category) %> |
+<%#= link_to 'Back', categories_path %> -->
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+

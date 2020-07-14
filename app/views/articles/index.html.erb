@@ -1,56 +1,24 @@
-<!-- <h1>Articles</h1> -->
 
-<!-- <div class="container"> -->
-
-  <!-- <div class="row"> -->
-    <div class="featured">
-      <!-- <h2>Featured Article</h2> -->
+    <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
       <p>Author: <%= featured_owner(@featured) %></p>
-      <p>Title: <%= featured_title(@featured) %></p>
-      <p>Content: <%= featured_content(@featured) %></p>
+      <p class="theme-color"> <%= featured_title(@featured) %></p>
+      <p> <%= featured_content(@featured) %></p>
     </div>
-  <!-- </div> -->
 
-  <div class="row">
+  <div class="">
     <h2>Categories</h2>
-    <% @categories.each do |category| %>
-      <div class="mb-5 mt-5">
-        <p>Category Name: <%= link_to category.Name, category_path(category) %></p>
-        <p>Article Title: <%= category.articles.pluck(:Title).last %></p>
-        <p>Article Image: <%#= image_tag(category.articles.pluck(:Image).last.thumbnail.url) %></p>
+      <div class="grid-c">
+        <% @categories.each do |category| %>
+        <div style="background-image: url(<%= (category.articles.pluck(:Image)) %>);">
+          <p>Category Name: <%= link_to category.Name, category_path(category) %></p>
+          <p>Article Title: <%= category.articles.pluck(:Title).last %></p>
+          <p>Article Image: <%#= image_tag(category.articles.pluck(:Image).last.thumbnail.url) %></p>
+        </div>
+        <% end %>
       </div>
-    <% end %>
   </div>
 
-  <!-- <div class="row">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Text</th>
-          <th>Image</th>
-          <th>Authorid</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
 
-      <tbody>
-        <%# @articles.each do |article| %>
-        <tr>
-          <td><%#= article.Title %></td>
-          <td><%#= article.Text %></td>
-          <td><%#= article.Image %></td>
-          <td><%#= article.AuthorId %></td>
-          <td><%#= link_to 'Show', article %></td>
-          <td><%#= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%#= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <%# end %>
-      </tbody>
-    </table>
-  </div> -->
-
-<!-- </div> -->
 
 <br>
 

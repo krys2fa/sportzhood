@@ -34,7 +34,7 @@
 body {
   min-width: 1024px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  height: 100%;
+
 }
 
 ul {
@@ -42,16 +42,20 @@ ul {
 }
 
 main {
-  margin: 0;
+  padding-bottom: 4.5rem;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
 }
 
 footer {
-  background-color: #4E453F;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-top: 60px;
+      background-color: #4E453F;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4.5rem;
 }
 
 .flex-h,
@@ -59,10 +63,20 @@ footer {
   display: flex;
 }
 
-.grid {
+.grid-c {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  margin-top: -20px;
+  // margin-top: -20px;
+  margin-bottom: 0;
+
+}
+
+.grid-r {
+  // display: grid;
+  // grid-template-rows: 50% 50%;
+  // margin-top: -20px;
+  // height: 100vh;
+  // width: 100vw;
 }
 
 .space-around {
@@ -85,6 +99,10 @@ footer {
   font-weight: 600;
 }
 
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+
 .theme-color {
   font-weight: 400;
   color: #FE6001;
@@ -93,9 +111,13 @@ footer {
 // .theme-title {
 //   font-weight: 600;
 // }
+.article-img {
+  height: 300px;
+}
 
 .content {
-  margin: 20px;
+  margin: 0 20px;
+  height: 300px;
 }
 
 .nav_link {
@@ -106,7 +128,6 @@ footer {
 
 .featured {
   height: 300px;
-  background-color: blue;
 }
 
 .formbox {

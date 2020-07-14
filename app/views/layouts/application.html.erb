@@ -12,17 +12,18 @@
 
 <body>
 
-    <%= render 'layouts/nav' %>
+   <div class="page">
+      <%= render 'layouts/nav' %>
 
-    <div class="container">
-      <%= display_flash(flash) %>
-    </div>
+      <div class="">
+        <%= display_flash(flash) %>
+      </div>
 
-    <main>
-      <%= yield %>
-    </main>
+      <main>
+        <%= yield %>
+      </main>
 
-    <footer class='flex-h space-between'>
+      <footer class='flex-h space-between'>
         <div class="logo">
           spoRtzHood
         </div>
@@ -39,7 +40,8 @@
           <li><%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %></li>
           <li><%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %></li>
         </ul>
-    </footer>
+      </footer>
+   </div>
 
 </body>
 
