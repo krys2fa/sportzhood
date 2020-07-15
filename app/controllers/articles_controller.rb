@@ -42,6 +42,9 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(Title: article_params[:Title], Text: article_params[:Text], Image: article_params[:Image])
+        article_category = ArticleCategory.where(ArticleId: @article.id)
+        article_category.CategoryId = article_params[:category_id]
+        article_category.save
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
