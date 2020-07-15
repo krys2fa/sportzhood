@@ -3,12 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'bigdecimal', '1.4.2'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro'
 gem 'font-awesome-rails'
-gem 'bigdecimal', '1.4.2'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
@@ -57,9 +57,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rspec-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails'
   gem 'webdrivers'
 end
 

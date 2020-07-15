@@ -7,17 +7,22 @@ class ImageUploader < CarrierWave::Uploader::Base
   process tags: ['article_picture']
 
   version :article_show do
-    process :eager => true
+    process eager: true
     process resize_to_fill: [425, 300, :north]
   end
 
   version :category_show do
-    process :eager => true
+    process eager: true
     process resize_to_fill: [260, 300, :north]
   end
 
+  version :feature_show do
+    process eager: true
+    process resize_to_fill: [1024, 300, :north]
+  end
+
   version :thumbnail do
-    process :eager => true
+    process eager: true
     resize_to_fit(50, 50)
   end
 

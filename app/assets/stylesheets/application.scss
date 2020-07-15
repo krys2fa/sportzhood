@@ -60,7 +60,8 @@ main {
 
 footer {
   background-color: #4e453f;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 4.5rem;
@@ -70,11 +71,16 @@ footer {
   display: flex;
 }
 
+.grid-h,
 .grid-c {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   height: 100vh;
   margin-bottom: 0;
+}
+
+.grid-h {
+  height: 50vh;
 }
 
 .space-around {
@@ -124,13 +130,11 @@ nav.navbar.navbar-default {
 }
 
 .featured {
-  // height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.featured,
-.featured-categories {
+.featured {
   height: 50vh;
 }
 
@@ -159,14 +163,14 @@ nav.navbar.navbar-default {
 }
 
 .category {
-  height: 200px;
-  margin-bottom: -20px;
   background-repeat: no-repeat;
   background-size: cover;
 
   p {
     color: #fff;
     font-weight: 600;
+    font-size: 2rem;
+    margin-top: 40px;
 
     a {
       color: #fff;
@@ -174,19 +178,22 @@ nav.navbar.navbar-default {
       margin-top: 30px;
       padding-bottom: 5px;
       font-weight: 600;
-      position: absolute;
-      bottom: 200px;
       border-bottom: 2px solid #cff32d;
+    }
+
+    a:hover {
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 
   span {
     color: #fff;
     margin-left: 30px;
-    margin-bottom: 20px;
     font-weight: 600;
-    position: absolute;
-    bottom: 60px;
+    font-size: 1.6rem;
+    position: fixed;
+    bottom: 100px;
   }
 }
 
@@ -247,9 +254,5 @@ nav.navbar.navbar-default {
     img {
       margin: 30px;
     }
-  }
-
-  footer {
-    position: fixed;
   }
 }

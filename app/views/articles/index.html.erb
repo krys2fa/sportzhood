@@ -1,24 +1,21 @@
 <div class="mother-feature">
-  <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
+
+  <div class="featured" style="background-image: url(<%= featured_image(@featured).feature_show.url %>);">
     <p class="theme-color feature-title"> <%= featured_title(@featured) %></p>
     <p class="feature-text"> <%= featured_content(@featured) %></p>
   </div>
 
-  <div class="featured-categories">
-    <div class="grid-c">
+    <div class="grid-h">
       <% @categories.each do |category| %>
       <% unless category.articles.last.nil? %>
-      <div class='category' style="background-image: url(<%= category.articles.last.Image.thumbnail.url %>);">
+      <div class='category' style="background-image: url(<%= category.articles.last.Image.category_show.url %>);">
         <p> <%= link_to category.Name, category_path(category) %></p>
         <span> <%= category.articles.pluck(:Title).last.truncate(30) %></span>
       </div>
       <% end %>
       <% end %>
     </div>
-  </div>
+
 </div>
 
-
-
-<br>
 

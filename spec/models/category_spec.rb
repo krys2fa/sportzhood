@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-
   describe 'associations' do
     it { should have_many(:article_categories).with_foreign_key(:CategoryId) }
     it { should have_many(:articles).through(:article_categories) }
@@ -13,5 +12,4 @@ RSpec.describe Category, type: :model do
     it { should validate_uniqueness_of(:Priority) }
     it { should validate_length_of(:Name).is_at_least(4) }
   end
-
 end
