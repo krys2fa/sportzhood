@@ -1,5 +1,5 @@
   <div class="grid-c">
-    <% @category.articles.reverse.each do |article| %>
+    <% @category.articles.limit(4).reverse.each do |article| %>
     <div>
       <% if article.id.odd?  %>
         <div class="article-img"
