@@ -1,6 +1,6 @@
 # sportzhood
 
-> This is the Ruby on Rails Capstone project built to mimic the lifestyle articles website.
+> This is the Ruby on Rails Capstone project built to mimic the lifestyle articles website redesign. The theme for this app, however, is a sports blog.
 
 ## Built With
 
@@ -9,11 +9,11 @@
 
 ## Live Demo
 
-Click [here](https://socialfriends.herokuapp.com/) to visit a live version of the web app.
+Click [here](https://sportzhood.herokuapp.com/) to visit a live version of the web app.
 
 ## Video Presentation
 
-Click [here](https://socialfriends.herokuapp.com/) for a video presentation.
+Click [here]() for a video presentation.
 
 ## Getting Started
 
@@ -40,6 +40,10 @@ Setup database with:
    rails db:migrate
 ```
 
+Setup cloudinary:
+
+Go through [this article](https://cloudinary.com/documentation/rails_integration) to setup cloudinary for image upload and manipulation.
+
 
 
 ### Usage
@@ -60,7 +64,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+This app was deployed on [heroku.](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjGkq6A4c7qAhVyt3EKHYKfAOwQFjAAegQIARAC&url=https%3A%2F%2Fwww.heroku.com%2F&usg=AOvVaw1V4lhSv6mb_lZj6UUCUXpS)
 
 ## Author
 
