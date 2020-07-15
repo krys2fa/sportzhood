@@ -26,7 +26,7 @@ Click [here](https://sportzhood.herokuapp.com/) to visit a live version of the w
 
 ## Video Presentation
 
-Click [here]() for a video presentation.
+Click [here](https://www.loom.com/share/5db0dc9d9b8d4b0b9344fd0f07539e99) for a video presentation.
 
 ## Getting Started
 
