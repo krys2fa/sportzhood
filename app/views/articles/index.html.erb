@@ -1,11 +1,9 @@
 <div class="mother-feature">
 
-  <% if @featured%>
-  <div class="featured" style="background-image: url(<%= featured_image(@featured).feature_show.url %>);">
+  <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
     <p class="theme-color feature-title"> <%= featured_title(@featured) %></p>
     <p class="feature-text"> <%= featured_content(@featured) %></p>
   </div>
-  <% end %>
 
     <div class="grid-h">
       <% @categories.each do |category| %>
