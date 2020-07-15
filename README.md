@@ -1,11 +1,24 @@
 # sportzhood
 
-> This is the Ruby on Rails Capstone project built to mimic the lifestyle articles website redesign. The theme for this app, however, is a sports blog.
+> This is the Ruby on Rails Microverse Capstone project built to mimic the lifestyle articles website redesign. The theme for this web desktop app, however, is a sports blog.
+
+## Web App Screenshots
+
+### Web App Home Page
+![](app/assets/images/app_screenshot.png)
+
+### Web App Articles Page
+![](app/assets/images/app_screenshot2.png)
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- Bootstrap-sass gem
+- Carrierwave gem
+- Cloudinary gem
+- Figaro gem
+- Font-awesome-rails gem
 
 ## Live Demo
 
@@ -44,7 +57,7 @@ Setup cloudinary:
 
 Go through [this article](https://cloudinary.com/documentation/rails_integration) to setup cloudinary for image upload and manipulation.
 
-
+[This](http://railsapps.github.io/rails-environment-variables.html) is useful to set your environment variables.
 
 ### Usage
 
@@ -86,9 +99,10 @@ Kindly give this repository a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Project specifications by [Microverse](https://www.microverse.org)
-- Design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on [Behance](https://www.behance.net/sakwadesignstudio)
+- Project specifications by [Microverse](https://www.microverse.org).
+- Design idea by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) on [Behance](https://www.behance.net/sakwadesignstudio).
+- All images used images downloaded from searching on [Google](https://www.google.com).
 
 ## 📝 License
 
-MIT License
+This project is licensed under the MIT License.
