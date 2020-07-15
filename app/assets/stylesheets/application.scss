@@ -132,9 +132,6 @@ nav.navbar.navbar-default {
 .featured {
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.featured {
   height: 50vh;
 }
 
@@ -160,6 +157,18 @@ nav.navbar.navbar-default {
   border: 1px solid #fe6001;
   padding: 10px 40px 40px;
   border-radius: 5px;
+}
+
+.footer-info {
+  padding: 0;
+
+  li {
+    margin: 10px;
+
+    a {
+      color: #000;
+    }
+  }
 }
 
 .category {
@@ -215,18 +224,6 @@ nav.navbar.navbar-default {
   padding: 5px;
   border-radius: 5px;
   margin-top: 20px;
-}
-
-.footer-info {
-  padding: 0;
-
-  li {
-    margin: 10px;
-
-    a {
-      color: #000;
-    }
-  }
 }
 
 .social-icons {

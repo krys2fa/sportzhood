@@ -1,5 +1,5 @@
   <div class="grid-c">
-    <% @category.articles.order('id DESC').limit(4).each_with_index do |article, index| %>
+    <% @category.articles.order('id DESC').each_with_index do |article, index| %>
     <div>
       <% if index.odd?  %>
         <div class="article-img"
