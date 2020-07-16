@@ -14,10 +14,10 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def self.featured_article
-    if Vote.any?
-      article_id = Vote.group(:article_id).count.max_by { |_k, v| v }.first
-      Article.find(article_id)
-    end
+    return unless Vote.any?
+
+    article_id = Vote.group(:article_id).count.max_by { |_k, v| v }.first
+    Article.find(article_id)
   end
 
   def tag_list=(tags_string)

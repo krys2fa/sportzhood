@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Authentication', type: :feature do
   before :each do
-    user = User.create(name: 'User', email: 'user@mail.com')
+    User.create(name: 'User', email: 'user@mail.com')
   end
 
   it 'Should log in' do
