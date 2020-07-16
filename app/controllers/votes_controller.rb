@@ -3,24 +3,21 @@ class VotesController < ApplicationController
 
   def create
     @vote = @current_user.votes.new(ArticleId: params[:article_id])
-    category = Article.find_by(id: params[:article_id]).categories.first
 
     if @vote.save
-      redirect_to category_path(category), notice: 'You voted for an article'
+      redirect_to request.referrer, notice: 'You voted for an article'
     else
-      redirect_to category_path(category), alert: 'You unvoted an article'
+      redirect_to request.referrer, alert: 'You unvoted an article'
     end
   end
 
   def destroy
     @vote = Vote.find_by(id: params[:id], user: @current_user, ArticleId: params[:article_id])
-    category = Article.find_by(id: 1).categories.first
 
-    if @vote
-      @vote.destroy
-      redirect_to category_path(category), notice: 'You unvoted an article'
+    if @vote.destroy
+      redirect_to request.referrer, notice: 'You unvoted an article'
     else
-      redirect_to category_path(category), alert: 'Cannot unvote without voting first!'
+      redirect_to request.referrer, alert: 'Cannot unvote without voting first!'
     end
   end
 end

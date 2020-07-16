@@ -13,7 +13,7 @@ class Article < ApplicationRecord
   mount_uploader :Image, ImageUploader
 
   def self.featured_article
-    article_id = Vote.group(:ArticleId).count.max_by{|k, v| v}.first
+    article_id = Vote.group(:ArticleId).count.max_by { |_k, v| v }.first
     Article.find(article_id)
   end
 
