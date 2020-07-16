@@ -6,7 +6,9 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show; end
+  def show
+    @category_articles = @category.articles.order('id DESC').limit(4)
+  end
 
   def new
     @category = Category.new

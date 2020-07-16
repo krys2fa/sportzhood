@@ -9,4 +9,12 @@ module CategoryHelper
       link_to('Vote', article_votes_path(article.id), method: :post, class: 'btn btn-success')
     end
   end
+
+  def category_article_title(article)
+    article.Title.truncate(30)
+  end
+
+  def category_article_text(article)
+    article.Text.truncate(100, separator: ' ', omission: '.... (continued)')
+  end
 end

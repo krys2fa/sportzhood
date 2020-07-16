@@ -14,4 +14,12 @@ module ArticleHelper
   def number_of_comments(article)
     article.comments.size
   end
+
+   def number_of_votes(article)
+    article.votes.size
+  end
+
+  def author_name(article)
+    article.user.Name
+  end
 end

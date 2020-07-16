@@ -1,21 +1,20 @@
   <div class="grid-c">
-    <% @category.articles.order('id DESC').each_with_index do |article, index| %>
+    <% @category_articles.each_with_index do |article, index| %>
     <div>
       <% if index.odd?  %>
         <div class="article-img"
           style="background-image: url(<%= article.Image.category_show.url %>);"></div>
       <% end %>
-      <div class="content">
-        <p class="theme-color">
-          <%= @category.Name %>
-        </p>
-        <p><%= link_to article.Title.truncate(30), article_path(article), class: 'nav-theme underline' %></p>
-        <p><%= article.Text.truncate(100, separator: ' ', omission: '.... (continued)') %></p>
 
-        <p>Author: <%= article.user.Name %></p>
-        <span class="theme-color"><%= article.votes.size %> </span>vote(s)
+      <div class="content">
+        <p class="theme-color"><%= @category.Name %></p>
+        <p><%= link_to category_article_title(article), article_path(article), class: 'nav-theme underline' %></p>
+        <p><%= category_article_text(article) %></p>
+
+        <p>Author: <%= author_name(article) %></p>
+        <span class="theme-color"><%= number_of_votes(article) %> </span>vote(s)
         &nbsp; <%= vote_button(article) if @current_user %><br />
-        <span class="theme-color"><%= article.comments.size %></span> comment(s)
+        <span class="theme-color"><%= number_of_comments(article) %></span> comment(s)
 
       </div>
 
@@ -23,6 +22,7 @@
         <div class="article-img" style="background-image: url(<%= article.Image.category_show.url %>);"></div>
       <% end %>
     </div>
+
     <% end %>
   </div>
 
