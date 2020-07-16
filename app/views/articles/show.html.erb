@@ -20,19 +20,25 @@
       <p><%= @article.Text %></p>
 
       <div>
+        <%= vote_button(@article) if @current_user %>
         <%= render partial: 'articles/comment', collection: @article.comments %>
-        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Edit | ', edit_article_path(@article) if @current_user %>
         <%= link_to 'Back', articles_path %>
       </div>
     </div>
 
 
-    <div class="col-md-6">
-      <div class="text-center commentbox">
-        <h3 class="theme-color"> <%= @article.comments.size %></h3> <span>comment(s) posted for this article</span>
-        <p><%= render partial: 'comments/form' %></p>
+    <% if @current_user %>
+      <div class="col-md-6">
+        <div class="text-center commentbox">
+          <h3 class="theme-color"> <%= number_of_comments(@article) %></h3> <span>comment(s) posted for this
+            article</span>
+          <p><%= render partial: 'comments/form' %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
+
+
   </div>
 
 </div>
