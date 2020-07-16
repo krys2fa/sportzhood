@@ -20,10 +20,7 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def create
-    @article = @current_user.articles.build(title: article_params[:title],
-                                            text: article_params[:text],
-                                            image: article_params[:image],
-                                            tag_list: article_params[:tag_list])
+    @article = @current_user.articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -39,7 +36,7 @@ class ArticlesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @article.update(title: article_params[:title], text: article_params[:text], image: article_params[:image])
+      if @article.update(article_params)
         article_category = ArticleCategory.where(article_id: @article.id)
         article_category[0].category_id = article_params[:category_id]
         article_category[0].save

@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  attr_accessor :category_id
   belongs_to :user, foreign_key: 'author_id', class_name: 'User'
   has_many :article_categories, foreign_key: 'article_id'
   has_many :categories, through: :article_categories, dependent: :destroy

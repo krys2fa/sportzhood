@@ -50,11 +50,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def category_link
-    category = Category.where(name: params[:name])
-    category.articles
-  end
-
   private
 
   def set_category
