@@ -53,6 +53,12 @@ Setup database with:
    rails db:migrate
 ```
 
+Populate database with:
+
+```
+   rails db:seed
+```
+
 Setup cloudinary:
 
 Go through [this article](https://cloudinary.com/documentation/rails_integration) to setup cloudinary for image upload and manipulation.
