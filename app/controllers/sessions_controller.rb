@@ -20,14 +20,4 @@ class SessionsController < ApplicationController
     redirect_to sessions_path
   end
 
-  # def user_logged_in?
-  #   !session[:id].nil?
-  # end
-
-  # def logged_in_user
-  #   return if logged_in?
-
-  #   flash[:danger] = 'Please log in.'
-  #   redirect_to sessions_path
-  # end
 end

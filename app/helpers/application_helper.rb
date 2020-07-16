@@ -19,11 +19,3 @@ module ApplicationHelper
     message.html_safe
   end
 end
-
-# html_values = ""
-#   resources.each do |resource|
-#     text = resource.name
-#     clz = 'label label-primary'
-#     html_values << (content_tag :span, text,clz)
-#   end
-#  html_values.html_safe
