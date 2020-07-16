@@ -1,14 +1,14 @@
 module ArticleHelper
   def featured_title(article)
-    article.try(:Title)
+    article.try(:title)
   end
 
   def featured_image(article)
-    article.try(:Image).try(:feature_show).try(:url)
+    article.try(:image).try(:feature_show).try(:url)
   end
 
   def featured_content(article)
-    article.try { |a| a.Text.truncate(100, separator: ' ', omission: '.... (continued)') }
+    article.try { |a| a.text.truncate(100, separator: ' ', omission: '.... (continued)') }
   end
 
   def number_of_comments(article)
@@ -20,6 +20,6 @@ module ArticleHelper
   end
 
   def author_name(article)
-    article.user.Name
+    article.user.name
   end
 end

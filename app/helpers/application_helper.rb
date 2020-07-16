@@ -7,7 +7,7 @@ module ApplicationHelper
     end
 
     categories.each do |category|
-      category_links << content_tag(:li, link_to(category.Name.upcase, category_path(category), class: 'nav-theme nav-margin'))
+      category_links << content_tag(:li, link_to(category.name.upcase, category_path(category), class: 'nav-theme nav-margin'))
     end
 
     category_links.html_safe

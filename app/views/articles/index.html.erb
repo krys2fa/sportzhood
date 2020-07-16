@@ -9,7 +9,7 @@
       <% @categories.each do |category| %>
         <% if category.articles.last %>
         <div class='category' style="background-image: url(<%= category.articles.last.Image.category_show.url %>);">
-          <p> <%= link_to category.Name, category_path(category) %></p>
+          <p> <%= link_to category.name, category_path(category) %></p>
           <span> <%= category_article_link(category) %></span>
         </div>
         <% end %>

@@ -12,27 +12,27 @@
 <% end %>
 
 <div class="field">
-  <%= form.label :Title %>
-  <%= form.text_field :Title, class: 'form-control', autofocus: true %>
+  <%= form.label :title %>
+  <%= form.text_field :title, class: 'form-control', autofocus: true %>
 </div>
 
 <div class="field">
-  <%= form.label :Text %>
-  <%= form.text_area :Text, class: 'h5 font-weight-bold form-control' %>
+  <%= form.label :text %>
+  <%= form.text_area :text, class: 'h5 font-weight-bold form-control' %>
 </div>
 
 <div class="field">
-  <%= form.label :Image %>
-  <%= form.file_field :Image, class: 'custom-btn' %>
+  <%= form.label :image %>
+  <%= form.file_field :image, class: 'custom-btn' %>
 </div>
 
 <div class="field">
-  <%= form.hidden_field :Image_cache%>
+  <%= form.hidden_field :image_cache%>
 </div>
 
 <div class="field">
   <%= form.label :category_id, 'Category' %>
-  <%= form.collection_select :category_id, Category.order(:Name), :id, :Name %>
+  <%= form.collection_select :category_id, Category.order(:Name), :id, :name %>
 </div>
 
 <div class="field">

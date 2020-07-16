@@ -12,7 +12,6 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    # @last_priority = Category.last.priority
   end
 
   def edit; end
@@ -52,7 +51,7 @@ class CategoriesController < ApplicationController
   end
 
   def category_link
-    category = Category.where(Name: params[:Name])
+    category = Category.where(name: params[:name])
     category.articles
   end
 
@@ -63,6 +62,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:Name, :Priority)
+    params.require(:category).permit(:name, :priority)
   end
 end

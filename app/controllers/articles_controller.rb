@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @featured = Article.featured_article
-    @categories = Category.order(:Priority).limit(4).includes(:articles)
+    @categories = Category.order(:priority).limit(4).includes(:articles)
   end
 
   def show
@@ -20,14 +20,14 @@ class ArticlesController < ApplicationController
   def edit; end
 
   def create
-    @article = @current_user.articles.build(Title: article_params[:Title],
-                                            Text: article_params[:Text],
-                                            Image: article_params[:Image],
+    @article = @current_user.articles.build(title: article_params[:title],
+                                            text: article_params[:text],
+                                            image: article_params[:image],
                                             tag_list: article_params[:tag_list])
 
     respond_to do |format|
       if @article.save
-        ArticleCategory.create(CategoryId: article_params[:category_id], ArticleId: @article.id)
+        ArticleCategory.create(category_id: article_params[:category_id], article_id: @article.id)
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
@@ -39,9 +39,9 @@ class ArticlesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @article.update(Title: article_params[:Title], Text: article_params[:Text], Image: article_params[:Image])
-        article_category = ArticleCategory.where(ArticleId: @article.id)
-        article_category[0].CategoryId = article_params[:category_id]
+      if @article.update(title: article_params[:title], text: article_params[:text], image: article_params[:image])
+        article_category = ArticleCategory.where(article_id: @article.id)
+        article_category[0].category_id = article_params[:category_id]
         article_category[0].save
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
@@ -67,6 +67,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:Title, :Text, :Image, :category_id, :Image_cache, :tag_list)
+    params.require(:article).permit(:title, :text, :image, :category_id, :image_cache, :tag_list)
   end
 end

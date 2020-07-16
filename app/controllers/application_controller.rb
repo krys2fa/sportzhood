@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_nav_categories
-    @nav_categories = Category.order(:Priority).limit(4)
+    @nav_categories = Category.order(:priority).limit(4)
   end
 end

@@ -7,7 +7,7 @@
       <% end %>
 
       <div class="content">
-        <p class="theme-color"><%= @category.Name %></p>
+        <p class="theme-color"><%= @category.name %></p>
         <p><%= link_to category_article_title(article), article_path(article), class: 'nav-theme underline' %></p>
         <p><%= category_article_text(article) %></p>
 

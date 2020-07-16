@@ -10,30 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_100222) do
+ActiveRecord::Schema.define(version: 2020_07_16_104025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "article_categories", force: :cascade do |t|
-    t.integer "CategoryId"
-    t.integer "ArticleId"
+    t.integer "category_id"
+    t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "articles", force: :cascade do |t|
-    t.string "Title"
-    t.text "Text"
-    t.text "Image"
-    t.integer "AuthorId"
+    t.string "title"
+    t.text "text"
+    t.text "image"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "Name"
-    t.integer "Priority"
+    t.string "name"
+    t.integer "priority"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,13 +63,13 @@ ActiveRecord::Schema.define(version: 2020_07_13_100222) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name"
+    t.string "name"
     t.string "email"
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "UserId"
-    t.integer "ArticleId"
+    t.integer "user_id"
+    t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
