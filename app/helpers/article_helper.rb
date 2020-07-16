@@ -22,4 +22,8 @@ module ArticleHelper
   def author_name(article)
     article.user.name
   end
+
+  def latest_article_background(category)
+    "#{category.articles.last.image.category_show.url}".html_safe if category.articles.any?
+  end
 end

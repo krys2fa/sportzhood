@@ -1,10 +1,8 @@
   <div class="grid-c">
     <% @category_articles.each_with_index do |article, index| %>
     <div>
-      <% if index.odd?  %>
-        <div class="article-img"
-          style="background-image: url(<%= article.image.category_show.url %>);"></div>
-      <% end %>
+
+      <%= odd_article_image(index, article) %>
 
       <div class="content">
         <p class="theme-color"><%= @category.name %></p>
@@ -18,9 +16,7 @@
 
       </div>
 
-      <% if index.even?  %>
-        <div class="article-img" style="background-image: url(<%= article.image.category_show.url %>);"></div>
-      <% end %>
+      <%= even_article_image(index, article) %>
     </div>
 
     <% end %>

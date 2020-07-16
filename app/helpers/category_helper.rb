@@ -19,8 +19,26 @@ module CategoryHelper
   end
 
   def category_article_link(category)
-    link_title = category.articles.pluck(:title).last.truncate(27)
-    article = category.articles.last
-    link_to(link_title, article_path(article), class: 'link-title underline')
+    if category.articles.any?
+      link_title = category.articles.pluck(:title).last.truncate(27)
+      article = category.articles.last
+      link_to(link_title, article_path(article), class: 'link-title underline')
+    end
+  end
+
+  def odd_article_image(index, article)
+    article_image = ''
+
+    article_image << content_tag(:div,'', class: 'article-img', style: "background-image: url(#{article.image.category_show.url}")
+
+    article_image.html_safe if index.odd?
+  end
+
+  def even_article_image(index, article)
+    article_image = ''
+
+    article_image << content_tag(:div,'', class: 'article-img', style: "background-image: url(#{article.image.category_show.url}")
+
+    article_image.html_safe if index.even?
   end
 end
