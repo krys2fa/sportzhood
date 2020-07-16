@@ -20,7 +20,7 @@
       <p><%= @article.Text %></p>
 
       <div>
-        <%= vote_button(@article) if @current_user %>
+        <%= vote_button(@article) if @current_user %><br />
         <%= render partial: 'articles/comment', collection: @article.comments %>
         <%= link_to 'Edit | ', edit_article_path(@article) if @current_user %>
         <%= link_to 'Back', articles_path %>

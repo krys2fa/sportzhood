@@ -3,8 +3,9 @@
     <h4><i class='fa fa-comment'>&nbsp;</i><%= comment.content %></h4>
   </p>
   <p>
-    <h6><i><%= comment.author %></i> commented <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %>
-      later</h6>
+    <h6>
+      <i><%= comment.author %></i> commented <%= time_commented_afterwards(comment) %> later
+    </h6>
   </p><br />
 
 </div>

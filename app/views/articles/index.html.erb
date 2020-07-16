@@ -7,10 +7,10 @@
 
     <div class="grid-h">
       <% @categories.each do |category| %>
-        <% unless category.articles.last.nil? %>
+        <% if category.articles.last %>
         <div class='category' style="background-image: url(<%= category.articles.last.Image.category_show.url %>);">
           <p> <%= link_to category.Name, category_path(category) %></p>
-          <span> <%= category.articles.pluck(:Title).last.truncate(30) %></span>
+          <span> <%= category_article_link(category) %></span>
         </div>
         <% end %>
       <% end %>

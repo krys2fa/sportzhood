@@ -60,7 +60,6 @@ main {
 
 footer {
   background-color: #4e453f;
-  // position: absolute;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -110,6 +109,11 @@ nav.navbar.navbar-default {
 .theme-color {
   font-weight: 400;
   color: #fe6001;
+}
+
+.link-title {
+  font-weight: 600;
+  color: #fff;
 }
 
 .article-img {

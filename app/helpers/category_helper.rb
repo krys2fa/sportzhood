@@ -17,4 +17,10 @@ module CategoryHelper
   def category_article_text(article)
     article.Text.truncate(100, separator: ' ', omission: '.... (continued)')
   end
+
+  def category_article_link(category)
+    link_title = category.articles.pluck(:Title).last.truncate(30)
+    article = category.articles.last
+    link_to(link_title, article_path(article), class: 'link-title underline')
+  end
 end
