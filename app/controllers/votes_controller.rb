@@ -2,7 +2,7 @@ class VotesController < ApplicationController
   before_action :set_current_user
 
   def create
-    @vote = @current_user.votes.new(ArticleId: params[:article_id])
+    @vote = @current_user.votes.new(article_id: params[:article_id])
 
     if @vote.save
       redirect_to request.referrer, notice: 'You voted for an article'

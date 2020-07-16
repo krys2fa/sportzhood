@@ -3,7 +3,7 @@
     <div>
       <% if index.odd?  %>
         <div class="article-img"
-          style="background-image: url(<%= article.Image.category_show.url %>);"></div>
+          style="background-image: url(<%= article.image.category_show.url %>);"></div>
       <% end %>
 
       <div class="content">
@@ -19,7 +19,7 @@
       </div>
 
       <% if index.even?  %>
-        <div class="article-img" style="background-image: url(<%= article.Image.category_show.url %>);"></div>
+        <div class="article-img" style="background-image: url(<%= article.image.category_show.url %>);"></div>
       <% end %>
     </div>
 

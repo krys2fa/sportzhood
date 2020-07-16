@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :votes
   resources :categories
   resources :users
   resources :sessions, only: [:index, :create, :destroy]
