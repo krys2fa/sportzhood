@@ -26,4 +26,10 @@ module ArticleHelper
   def latest_article_background(category)
     "#{category.articles.last.image.category_show.url}".html_safe if category.articles.any?
   end
+
+  def featured_title_link(article)
+    if article
+      link_to(featured_title(article), article_path(article), class: 'link-title underline')
+    end
+  end
 end

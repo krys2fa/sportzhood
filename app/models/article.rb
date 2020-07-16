@@ -13,8 +13,10 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def self.featured_article
-    article_id = Vote.group(:article_id).count.max_by { |_k, v| v }.first
-    Article.find(article_id)
+    if Vote.any?
+      article_id = Vote.group(:article_id).count.max_by { |_k, v| v }.first
+      Article.find(article_id)
+    end
   end
 
   def tag_list=(tags_string)
