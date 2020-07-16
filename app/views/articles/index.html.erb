@@ -1,7 +1,7 @@
 <div class="mother-feature">
 
   <div class="featured" style="background-image: url(<%= featured_image(@featured) %>);">
-    <p class="theme-color feature-title"> <%= featured_title(@featured) %></p>
+    <p class="theme-color feature-title"> <%= link_to featured_title(@featured), article_path(@featured), class: 'link-title underline' %></p>
     <p class="feature-text"> <%= featured_content(@featured) %></p>
   </div>
 

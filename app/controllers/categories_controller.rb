@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    # @last_priority = Category.last.priority
   end
 
   def edit; end

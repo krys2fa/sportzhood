@@ -27,6 +27,9 @@
                   <%= link_to 'Log out', session_path(session), data: {:confirm => 'Are you sure?'},
                      :method => :delete, class: "nav-item nav-link text-white" %>
                 </li>
+                <li>
+                  <%= link_to 'Create a Category', new_category_path, class: "nav-item nav-link text-white" %>
+                </li>
               </ul>
             </li>
             <% end %>
