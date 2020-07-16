@@ -11,7 +11,7 @@ module CategoryHelper
   end
 
   def category_article_title(article)
-    article.Title.truncate(30)
+    article.Title.truncate(27)
   end
 
   def category_article_text(article)
@@ -19,7 +19,7 @@ module CategoryHelper
   end
 
   def category_article_link(category)
-    link_title = category.articles.pluck(:Title).last.truncate(30)
+    link_title = category.articles.pluck(:Title).last.truncate(27)
     article = category.articles.last
     link_to(link_title, article_path(article), class: 'link-title underline')
   end

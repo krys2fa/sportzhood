@@ -1,21 +1,21 @@
 module ArticleHelper
   def featured_title(article)
-    article.first.try(:Title)
+    article.try(:Title)
   end
 
   def featured_image(article)
-    article.first.try(:Image).try(:feature_show).try(:url)
+    article.try(:Image).try(:feature_show).try(:url)
   end
 
   def featured_content(article)
-    article.first.try { |a| a.Text.truncate(100, separator: ' ', omission: '.... (continued)') }
+    article.try { |a| a.Text.truncate(100, separator: ' ', omission: '.... (continued)') }
   end
 
   def number_of_comments(article)
     article.comments.size
   end
 
-   def number_of_votes(article)
+  def number_of_votes(article)
     article.votes.size
   end
 
