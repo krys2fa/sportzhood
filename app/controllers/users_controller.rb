@@ -13,7 +13,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to sessions_path, notice: 'User was successfully created. You can now log in...' }
+        session[:id] = @user.id
+        session[:name] = @user.name
+        format.html { redirect_to articles_path, notice: 'Your account was successfully created' }
       else
         format.html { render :new }
       end
