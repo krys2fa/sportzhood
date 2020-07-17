@@ -12,6 +12,12 @@
           </span>
         <% end %>
       </p>
+      <p>
+        <h6 class="theme-color"> <%= number_of_comments(@article) %> posted for this
+          article</h6>
+          <h6 class="theme-color"> <%= number_of_votes(@article) %><span> for this
+              article</span></h6>
+      </p>
 
       <p class="text-center">
         <%= image_tag(@article.image.article_show.url) %>
@@ -21,7 +27,7 @@
 
       <div>
         <%= vote_button(@article) if @current_user %><br />
-        <%= render partial: 'articles/comment', collection: @article.comments %>
+        <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
         <%= link_to 'Edit | ', edit_article_path(@article) if @current_user %>
         <%= link_to 'Back', articles_path %>
       </div>
@@ -30,8 +36,6 @@
     <% if @current_user %>
       <div class="col-md-6">
         <div class="text-center commentbox">
-          <h3 class="theme-color"> <%= number_of_comments(@article) %></h3> <span>comment(s) posted for this
-            article</span>
           <p><%= render partial: 'comments/form' %></p>
         </div>
       </div>

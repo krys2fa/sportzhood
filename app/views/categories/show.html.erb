@@ -10,9 +10,9 @@
         <p><%= category_article_text(article) %></p>
 
         <p>Author: <%= author_name(article) %></p>
-        <span class="theme-color"><%= number_of_votes(article) %> </span>vote(s)
+        <span class="theme-color"><%= number_of_votes(article) %> </span>
         &nbsp; <%= vote_button(article) if @current_user %><br />
-        <span class="theme-color"><%= number_of_comments(article) %></span> comment(s)
+        <span class="theme-color"><%= number_of_comments(article) %></span>
 
       </div>
 

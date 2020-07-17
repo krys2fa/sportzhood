@@ -3,8 +3,7 @@
 
   <%= form_for [ @article, @comment ] do |f| %>
   <p>
-    <%= f.label :author, "Your Name"  %>
-    <%= f.text_field :author, class: 'form-control' %>
+    <%= f.hidden_field :author, :value => @current_user.name %>
   </p>
   <p>
     <%= f.label :content %><br />

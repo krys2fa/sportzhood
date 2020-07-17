@@ -12,11 +12,11 @@ module ArticleHelper
   end
 
   def number_of_comments(article)
-    article.comments.size
+    pluralize(article.comments.size, 'comment')
   end
 
   def number_of_votes(article)
-    article.votes.size
+    pluralize(article.votes.size, 'vote')
   end
 
   def author_name(article)
