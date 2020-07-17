@@ -42,8 +42,7 @@
           </div>
         <% end %>
 
-        <h3 class="theme-color text-center">Comments</h3>
-          <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+        <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
       </div>
   </div>
 
