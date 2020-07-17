@@ -37,12 +37,17 @@ main {
   margin-top: 100px;
 }
 
-.tag {
+.tag a {
   padding: 1px;
   margin: 2px;
   border: 1px solid #4e453f;
   border-radius: 30%;
   color: #fe6001;
+}
+
+.tag-articles {
+  margin: 20px auto;
+  color: #000;
 }
 
 .page {

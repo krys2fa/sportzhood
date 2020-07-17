@@ -17,7 +17,7 @@ RSpec.feature 'Authentication', type: :feature do
     fill_in 'Name', with: 'administrator'
     fill_in 'Email', with: 'adm@admin.com'
     click_button 'commit'
-    expect(page).to have_content('Please Sign In')
+    expect(page).to have_content('WRITE AN ARTICLE')
   end
 
   it 'Should sign out' do
