@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  CategoryId: 1
+  ArticleId: 1
+
+two:
+  CategoryId: 1
+  ArticleId: 1

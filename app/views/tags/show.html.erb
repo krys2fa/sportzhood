@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="theme-color text-center">Articles Tagged with <%= @tag.name %></h1>
+
+  <ul>
+    <% @tag.articles.each do |article| %>
+    <li><%= link_to article.title.truncate(70), article_path(article), class: "tag-articles" %></li>
+    <% end %>
+  </ul>
+</div>

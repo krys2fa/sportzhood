@@ -12,5 +12,18 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require bootstrap/dropdown
 //= require turbolinks
 //= require_tree .
+
+var ready = function () {
+  setTimeout(function () {
+    $('.alert').slideUp(500);
+  }, 3000);
+};
+
+
+$(document).on('turbolinks:load', ready);

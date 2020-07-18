@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sportzhood</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Sportzhood</title>
+  <meta http-equiv="Accept-CH" content="DPR, Width">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+   <div class="page">
+      <%= render 'shared/nav' %>
+
+      <div>
+        <%= display_flash(flash) %>
+      </div>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer class='flex-h space-between'>
+        <div>
+          <%= link_to 'spoRtzHood', articles_path , class: 'logo' %>
+        </div>
+
+        <ul class='footer-info flex-h'>
+          <li class="rules">Privacy Policy</li>
+          <li class='rules'>Terms & Conditions</li>
+          <li class='text-white'>Copyright 2020. All rights reserved</li>
+        </ul>
+
+        <ul class='footer-info flex-h space-between'>
+          <li><span class='text-white'>Connect with us</span></li>
+          <li><%= link_to "<i class='fa fa-twitter social-icons'></i>".html_safe, '#' %></li>
+          <li><%= link_to "<i class='fa fa-instagram social-icons'></i>".html_safe, '#' %></li>
+          <li><%= link_to "<i class='fa fa-facebook social-icons'></i>".html_safe, '#' %></li>
+        </ul>
+      </footer>
+   </div>
+
+</body>
+
 </html>
